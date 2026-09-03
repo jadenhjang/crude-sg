@@ -76,11 +76,11 @@ function check2(sg::SpinGlass)
   println("change in hamiltonian = ", (hamiltonian(sg2, 0)-hamiltonian(sg, 0)))
 end
 
-function MCMC_test(sg::SpinGlass)
+function MCMC_test(sg::SpinGlass, beta::Float64, h::Float64)
   #Q1
   sg.spins[:] = ones(Int64, sg.size)
-  beta::Float64 = 1.2
-  h::Float64 = 0
+  # beta::Float64 = 1.2
+  # h::Float64 = 0
 
   t = 1:(sg.size*100)
   y::Array{Float64} = []
