@@ -1,3 +1,3 @@
 function partition_function(sg::SpinGlass)
-  # look to optimize
+  #TODO: look to optimize
 end

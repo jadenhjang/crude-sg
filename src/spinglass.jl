@@ -6,14 +6,13 @@ end
 
 # helper functions: generate coupling matrix J_{i,j}
 function sherrington_kirkpatrick(n::Int64)
-  J::Matrix{Float64} = randn(n, n) ./ sqrt(n)  # normalization factor
+  A::Matrix{Float64} = randn(n, n) ./ sqrt(n)  # normalization factor
+  J = (A + A') / 2  # symmetric (hermitian)
 
   for i in 1:n
     J[i, i] = 0  # zero the diagonal
-    for j in 1:(i-1)
-      J[i, j] = J[j, i]  # symmetric, may be dropped
-    end
   end
+
   return J
 end
 
