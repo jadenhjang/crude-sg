@@ -1,7 +1,7 @@
 using Plots, Revise, BenchmarkTools
 
-includet("../spinglass.jl")
-includet("../methods.jl")
+includet("../src/spinglass.jl")
+includet("../src/methods.jl")
 
 N = [10, 50, 100, 200, 1000]  # 1000
 params = [[1.2, 0.0], [1.2, -0.1]]
@@ -31,4 +31,4 @@ for i in 1:5
   plot!(plt, sols[i, paramset].t ./ sols[i, paramset].N, sols[i, paramset].y, label=sols[i, paramset].N)
 end
 
-savefig(plt, "test.png")
+savefig(plt, "plots/test.png")

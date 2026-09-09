@@ -4,7 +4,7 @@
   config::Matrix{Float64} = curie_weiss(size)
 end
 
-# helper: generate coupling matrix J_{i,j}
+# helper functions: generate coupling matrix J_{i,j}
 function sherrington_kirkpatrick(n::Int64)
   J::Matrix{Float64} = randn(n, n) ./ sqrt(n)  # normalization factor
 
